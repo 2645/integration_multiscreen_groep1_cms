@@ -86,9 +86,28 @@ textarea.materialize-textarea {
     font-weight: normal !important;
 }
 
+.time-input-label {
+    line-height: 3rem;
+}
+
+.input-time {
+    text-align: right;
+}
+
+.location-picker {
+    height: 200px;
+    width: 100%;
+    width: calc(100% - 1.25rem);
+    margin: 0 auto 20px auto;
+    box-sizing: border-box;
+}
+
+#container-games, #container-attractions {
+	display: none;
+}
+
 @media only screen and (max-width : 992px) {
     main, footer, #topnav {
         padding-left: 0;
     }
 }
-

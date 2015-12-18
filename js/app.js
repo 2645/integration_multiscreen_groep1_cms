@@ -10,11 +10,13 @@ $(document).ready( function() {
     });
     
     $("#nav-attractions").on("click", function() {
-        $("main").load("attractions.html");
+        $("main > .container").hide();
+        $("#container-attractions").show();
         $(".button-collapse").sideNav('hide');
     });
     
     $("#nav-games").on("click", function() {
+        $("main > .container").hide();
         $("#container-games").show();
         $(".button-collapse").sideNav('hide');        
     });
