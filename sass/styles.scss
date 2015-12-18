@@ -1,0 +1,94 @@
+@import "mixin-color";
+@import "mixin-font";
+@import "clearfix";
+
+$color-stack:
+	(group: red, id: cocacola, color: #e5403c),
+	(group: pink, id: light, color: #ffe8d9),
+	(group: orange, id: light, color: #f4a06f),
+	(group: orange, id: dark, color: #ff7d55);
+
+$font-stack:
+  (group: brandon, id: light, font: ('Brandon Grot W01 Light', san-serif ), weight: 200, style: normal),
+  (group: brandon, id: light-italic, font: ('Brandon Grot W01 Light', san-serif ), weight: 200, style: italic),
+  (group: brandon, id: regular, font: ('Brandon Grot W01-Regular', san-serif), weight: 400, style: normal),
+  (group: brandon, id: regular-italic, font: ('Brandon Grot W01-Regular', san-serif), weight: 400, style: italic),
+  (group: brandon, id: bold, font: ('Brandon Grot W01 Black', san-serif), weight: 700, style: normal),
+  (group: brandon, id: bold-italic, font: ('Brandon Grot W01-Regular', san-serif), weight: 400, style: italic),
+  (group: clarendon, id: regular, font: ('Clarendon LT W01', serif), weight: 200, style: normal),
+  (group: code, id: regular, font: (monospace), weight: 400, style: normal);
+
+#topnav {
+    height: 122px;
+    margin-bottom: 50px;
+    box-shadow: none;
+    background-color: color(red, cocacola);
+    
+    a.page-title {
+        line-height: 122px;
+        font-size: 48px;
+        display: block;
+        text-align: center;
+    }
+}
+
+#nav-mobile {
+    #nav-logo {
+        width: 80%;
+        margin: 30px 10%;
+    }
+}
+
+#sandwich {
+    line-height: 122px;
+    position: absolute;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    left: 7.5%;
+    top: 0;
+    float: none;
+    margin-left: 1.5rem;
+    color: #fff;
+    font-size: 32px;
+    z-index: 2;
+}
+
+main, footer, #topnav {
+    padding-left: 240px;
+}
+
+.cardtitle {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.edit {
+    margin-right: 20px;
+}
+
+.edit:hover {
+    cursor: pointer;
+}
+
+.reveal-content {
+    @extend %clearfix;
+}
+
+textarea.materialize-textarea {
+    padding: .8rem 0 1.6rem 0 !important;
+}
+
+.btn-submit {
+    margin: 0 0.75rem;
+    background-color: color(red, cocacola) !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+}
+
+@media only screen and (max-width : 992px) {
+    main, footer, #topnav {
+        padding-left: 0;
+    }
+}
+

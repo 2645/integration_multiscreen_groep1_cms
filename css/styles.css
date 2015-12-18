@@ -1,0 +1,75 @@
+/* Source: http://blog.teamtreehouse.com/a-better-clearfix-with-sass */
+/* Use: @extend %clearfix; */
+/* line 5, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/_clearfix.scss */
+.reveal-content:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* line 21, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+#topnav {
+  height: 122px;
+  margin-bottom: 50px;
+  box-shadow: none;
+  background-color: #e5403c; }
+  /* line 27, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+  #topnav a.page-title {
+    line-height: 122px;
+    font-size: 48px;
+    display: block;
+    text-align: center; }
+
+/* line 36, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+#nav-mobile #nav-logo {
+  width: 80%;
+  margin: 30px 10%; }
+
+/* line 42, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+#sandwich {
+  line-height: 122px;
+  position: absolute;
+  text-align: center;
+  height: 48px;
+  width: 48px;
+  left: 7.5%;
+  top: 0;
+  float: none;
+  margin-left: 1.5rem;
+  color: #fff;
+  font-size: 32px;
+  z-index: 2; }
+
+/* line 57, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+main, footer, #topnav {
+  padding-left: 240px; }
+
+/* line 61, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+.cardtitle {
+  font-size: 24px;
+  font-weight: 300; }
+
+/* line 66, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+.edit {
+  margin-right: 20px; }
+
+/* line 70, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+.edit:hover {
+  cursor: pointer; }
+
+/* line 78, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+textarea.materialize-textarea {
+  padding: 0.8rem 0 1.6rem 0 !important; }
+
+/* line 82, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+.btn-submit {
+  margin: 0 0.75rem;
+  background-color: #e5403c !important;
+  font-size: 15px !important;
+  font-weight: normal !important; }
+
+@media only screen and (max-width: 992px) {
+  /* line 90, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+  main, footer, #topnav {
+    padding-left: 0; } }
+
+/*# sourceMappingURL=styles.css.map */
