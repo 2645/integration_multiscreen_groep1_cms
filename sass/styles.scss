@@ -79,14 +79,20 @@ textarea.materialize-textarea {
     padding: .8rem 0 1.6rem 0 !important;
 }
 
-.btn-submit {
+.btn-submit, .btn-delete {
     margin: 0 0.75rem;
     background-color: color(red, cocacola) !important;
     font-size: 15px !important;
     font-weight: normal !important;
 }
 
-.time-input-label {
+.btn-delete {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.time-input-label, .balance-input-label, .price-input-label {
     line-height: 3rem;
 }
 
@@ -104,6 +110,35 @@ textarea.materialize-textarea {
 
 #container-games, #container-attractions {
 	display: none;
+}
+
+.game-card, .user-card, .avatar-card {
+    .card-image {
+        height: 60% !important;
+        
+        img {
+            top: 10% !important;
+            width: 40% !important;
+            left: 30% !important;
+            max-height: 100% !important;
+        }
+    }
+}
+
+attraction-card {
+    .card-image {
+        height: 60% !important;
+        
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.margin-auto {
+    clear: both;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 @media only screen and (max-width : 992px) {

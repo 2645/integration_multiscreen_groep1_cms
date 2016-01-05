@@ -61,21 +61,27 @@ textarea.materialize-textarea {
   padding: 0.8rem 0 1.6rem 0 !important; }
 
 /* line 82, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
-.btn-submit {
+.btn-submit, .btn-delete {
   margin: 0 0.75rem;
   background-color: #e5403c !important;
   font-size: 15px !important;
   font-weight: normal !important; }
 
 /* line 89, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
-.time-input-label {
+.btn-delete {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  clear: both; }
+
+/* line 95, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+.time-input-label, .balance-input-label, .price-input-label {
   line-height: 3rem; }
 
-/* line 93, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+/* line 99, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
 .input-time {
   text-align: right; }
 
-/* line 97, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+/* line 103, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
 .location-picker {
   height: 200px;
   width: 100%;
@@ -83,12 +89,35 @@ textarea.materialize-textarea {
   margin: 0 auto 20px auto;
   box-sizing: border-box; }
 
-/* line 105, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+/* line 111, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
 #container-games, #container-attractions {
   display: none; }
 
+/* line 116, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+.game-card .card-image, .user-card .card-image, .avatar-card .card-image {
+  height: 60% !important; }
+  /* line 119, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+  .game-card .card-image img, .user-card .card-image img, .avatar-card .card-image img {
+    top: 10% !important;
+    width: 40% !important;
+    left: 30% !important;
+    max-height: 100% !important; }
+
+/* line 129, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+attraction-card .card-image {
+  height: 60% !important; }
+  /* line 132, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+  attraction-card .card-image img {
+    height: 100%; }
+
+/* line 138, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+.margin-auto {
+  clear: both;
+  margin-left: auto !important;
+  margin-right: auto !important; }
+
 @media only screen and (max-width: 992px) {
-  /* line 110, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+  /* line 145, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
   main, footer, #topnav {
     padding-left: 0; } }
 

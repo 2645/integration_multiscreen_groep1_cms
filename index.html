@@ -17,7 +17,13 @@
     <script type="text/javascript" src="js/locationpicker.jquery.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    
+    <script type="text/javascript" src="js/attractions.js"></script>
+    <script type="text/javascript" src="js/avatars.js"></script>
     <script type="text/javascript" src="js/dashboard.js"></script>
+    <script type="text/javascript" src="js/games.js"></script>
+    <script type="text/javascript" src="js/qr.js"></script>
+    <script type="text/javascript" src="js/users.js"></script>
 </head>
 
 <body>
@@ -124,10 +130,14 @@
     <main>
         <div class="container" id="container-games">
             <div class="row"></div>
-            <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-                <a class="btn-floating btn-large red modal-trigger" id="fab-games" href="#modal-games">
-                    <i class="large material-icons">playlist_add</i>
+            <div class="fixed-action-btn horizontal" id="fab-games" style="bottom: 45px; right: 45px;">
+                <a class="btn-floating btn-large red"  >
+                    <i class="large material-icons">toc</i>
                 </a>
+                <ul>
+                    <li><a class="btn-floating blue modal-trigger" href="#modal-games"><i class="material-icons">playlist_add</i></a></li>
+                    <li><a class="btn-floating green btn-reload"><i class="material-icons">replay</i></a></li>
+                </ul>
             </div>
             <div id="modal-games" class="modal bottom-sheet">
                 <div class="modal-content">
@@ -165,14 +175,17 @@
                     </div>
                 </div>
             </div>
-            <script type="text/javascript" src="js/games.js"></script>
         </div>
         <div class="container" id="container-attractions">
             <div class="row"></div>
-            <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-                <a class="btn-floating btn-large red modal-trigger" id="fab-attractions" href="#modal-attractions">
-                    <i class="large material-icons">playlist_add</i>
+            <div class="fixed-action-btn horizontal" id="fab-attractions" style="bottom: 45px; right: 45px;">
+                <a class="btn-floating btn-large red"  >
+                    <i class="large material-icons">toc</i>
                 </a>
+                <ul>
+                    <li><a class="btn-floating blue modal-trigger" href="#modal-attractions"><i class="material-icons">playlist_add</i></a></li>
+                    <li><a class="btn-floating green btn-reload"><i class="material-icons">replay</i></a></li>
+                </ul>
             </div>
             <div id="modal-attractions" class="modal bottom-sheet">
                 <div class="modal-content">
@@ -180,17 +193,22 @@
                         <h4>Nieuwe attractie toevoegen</h4>
                         <form class="col s12">
                             <div class="row" style="margin-top: 1rem">
-                                <div class="input-field col s12 l6" style="margin-top: 0">
+                                <div class="input-field col s12 l6">
                                     <input id="input-attraction-name" type="text" class="validate">
                                     <label for="input-attraction-name">Naam</label>
                                 </div>
-                                <div class="input-field col s6">
-                                    <input value="0" type="number" min="0" class="validate input-time">
-                                    <label class="active" for="first_name2">Wachttijd</label>
+                                <div class="col s12 l6">
+                                    <div class="input-field col s6">
+                                        <input type="number" min="0" class="validate input-time" id="input-attraction-queue">
+                                        <label class="active" for="first_name2">Wachttijd</label>
+                                    </div>
+                                    <div class="col s6">
+                                        <p class="time-input-label"> minuten</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s12">
+                                <div class="input-field col s12 l6">
                                     <textarea id="input-attraction-desc" class="materialize-textarea"></textarea>
                                     <label for="input-attraction-desc">Omschrijving</label>
                                 </div>
@@ -207,9 +225,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col s6">
-                                    <p class="time-input-label"> minuten</p>
-                                </div>
+                                <div class='location-picker' id='input-attraction-location'></div>
                             </div>
                         </form>
                         <div class="modal-footer">
@@ -219,7 +235,159 @@
                     </div>
                 </div>
             </div>
-            <script type="text/javascript" src="js/attractions.js"></script>
+        </div>
+        <div class="container" id="container-avatars">
+            <div class="row"></div>
+            <div class="fixed-action-btn horizontal" id="fab-avatars" style="bottom: 45px; right: 45px;">
+                <a class="btn-floating btn-large red"  >
+                    <i class="large material-icons">toc</i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating blue modal-trigger" href="#modal-avatars"><i class="material-icons">playlist_add</i></a></li>
+                    <li><a class="btn-floating green btn-reload"><i class="material-icons">replay</i></a></li>
+                </ul>
+            </div>
+            <div id="modal-avatars" class="modal bottom-sheet">
+                <div class="modal-content">
+                    <div class="container">
+                        <h4>Nieuwe avatar toevoegen</h4>
+                        <form class="col s12">
+                            <div class="row" style="margin-top: 1rem">
+                                <div class="input-field col s12 l6">
+                                    <input id="input-avatar-name" type="text" class="validate">
+                                    <label for="input-avatar-name">Naam</label>
+                                </div>
+                                <div class="col s12 l6">
+                                    <div class="input-field col s6">
+                                        <input type="number" min="0" class="validate input-time" id="input-avatar-price">
+                                        <label class="active" for="first_name2">Prijs</label>
+                                    </div>
+                                    <div class="col s6">
+                                        <p class="time-input-label"> coca coins</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 l6">
+                                    <textarea id="input-avatar-desc" class="materialize-textarea"></textarea>
+                                    <label for="input-avatar-desc">Omschrijving</label>
+                                </div>
+                                <div class="col s12 l6" style="margin-top: 2rem">
+                                    <div class="file-field input-field" style="margin-top: 0">
+                                        <div class="btn red">
+                                            <span>Kies een bestand</span>
+                                            <input type="file" id="input-avatar-img">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-light btn red" id="btn-new-avatar" style="margin-left: 25px">Opslaan</a>
+                            <a href="#!" class="modal-action modal-close waves-effect waves-light btn red">Annuleren</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="container-qr">
+            <div class="row"></div>
+            <div class="fixed-action-btn horizontal" id="fab-qr" style="bottom: 45px; right: 45px;">
+                <a class="btn-floating btn-large red"  >
+                    <i class="large material-icons">toc</i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating blue modal-trigger" href="#modal-qr"><i class="material-icons">playlist_add</i></a></li>
+                    <li><a class="btn-floating green btn-reload"><i class="material-icons">replay</i></a></li>
+                </ul>
+            </div>
+            <div id="modal-qr" class="modal bottom-sheet">
+                <div class="modal-content">
+                    <div class="container">
+                        <h4>Nieuwe QR-code toevoegen</h4>
+                        <form class="col s12">
+                            <div class="row" style="margin-top: 1rem">
+                                <div class="input-field col s12 l6" style="margin-top: 0">
+                                    <input id="input-qr-name" type="text" class="validate">
+                                    <label for="input-qr-name">Naam</label>
+                                </div>
+                                <div class="col s12 l6">
+                                    <div class="file-field input-field" style="margin-top: 0">
+                                        <div class="btn red">
+                                            <span>Kies een bestand</span>
+                                            <input type="file" id="input-qr-img">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="input-qr-desc" class="materialize-textarea"></textarea>
+                                    <label for="input-qr-desc">Omschrijving</label>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-light btn red" id="btn-new-qr" style="margin-left: 25px">Opslaan</a>
+                            <a href="#!" class="modal-action modal-close waves-effect waves-light btn red">Annuleren</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="container-users">
+            <div class="row"></div>
+            <div class="fixed-action-btn horizontal" id="fab-users" style="bottom: 45px; right: 45px;">
+                <a class="btn-floating btn-large red"  >
+                    <i class="large material-icons">toc</i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating blue modal-trigger" href="#modal-users"><i class="material-icons">playlist_add</i></a></li>
+                    <li><a class="btn-floating green btn-reload"><i class="material-icons">replay</i></a></li>
+                </ul>
+            </div>
+            <div id="modal-users" class="modal bottom-sheet">
+                <div class="modal-content">
+                    <div class="container">
+                        <h4>Nieuwe gebruiker toevoegen</h4>
+                        <form class="col s12">
+                            <div class="row" style="margin-top: 1rem">
+                                <div class="input-field col s12 l6" style="margin-top: 0">
+                                    <input id="input-users-name" type="text" class="validate">
+                                    <label for="input-users-name">Naam</label>
+                                </div>
+                                <div class="col s12 l6">
+                                    <div class="file-field input-field" style="margin-top: 0">
+                                        <div class="btn red">
+                                            <span>Kies een bestand</span>
+                                            <input type="file" id="input-users-img">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="input-users-desc" class="materialize-textarea"></textarea>
+                                    <label for="input-users-desc">Omschrijving</label>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-light btn red" id="btn-new-user" style="margin-left: 25px">Opslaan</a>
+                            <a href="#!" class="modal-action modal-close waves-effect waves-light btn red">Annuleren</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer></footer>
