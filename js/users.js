@@ -96,10 +96,10 @@ function submitUserChange(e) {
             data: JSON.stringify(data),
             success: function () {
                 Materialize.toast('Data succesvol bijgewerkt.', 2000);
-                fetchAvatars();
+                fetchUsers();
             },
             error: function (data) {
-                Materialize.toast("Fout bij het updaten van de avatar: " + data.status + " " + data.statusText, 2000);
+                Materialize.toast("Fout bij het updaten van de gebruiker: " + data.status + " " + data.statusText, 2000);
                 console.error(data);
             }
         });
@@ -107,7 +107,38 @@ function submitUserChange(e) {
 }
 
 function submitUserNew() {
-    
+    var firstname = $("#input-users-voornaam").val(),
+        lastname = $("#input-users-achternaam").val(),
+        mail = $("#input-users-email").val(),
+        password = $("#input-users-password").val(),
+        balance = $("#input-users-balance").val(),
+        avatar_id = $("#input-users-avatarid").val(),
+        data = {
+            fname: firstname,
+            lname: lastname,
+            mail: mail,
+            pw: password,
+            balance: balance,
+            avatarId: avatar_id, 
+        };
+
+    Materialize.toast('Data naar de server versturen...', 2000);
+
+    $.ajax({
+        type: "POST",
+        url: window.APIurl + "/users/create",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(data),
+        success: function () {
+            Materialize.toast('Data succesvol bijgewerkt.', 2000);
+            fetchUsers();
+        },
+        error: function (data) {
+            Materialize.toast("Fout bij het indienen van de nieuwe gebruiker: " + data.status + " " + data.statusText, 2000);
+            console.error(data);
+        }
+    });
 }
 
 function submitUserDestroy(e) {
