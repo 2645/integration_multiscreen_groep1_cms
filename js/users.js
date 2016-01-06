@@ -6,6 +6,7 @@ function fetchUsers() {
     
     Materialize.toast('Lijst met gebruikers verversen...', 2000);
     $(container + " > .row").empty();
+    addSpinner(container);
     
     $.ajax({
         url: window.APIurl + "/users/list",
@@ -55,10 +56,12 @@ function fetchUsers() {
                     }
                 });
             }
+            removeSpinner(container);
         },
         error: function (data) {
             Materialize.toast("Fout bij het ophalen van de gebruikers: " + data.status + " " + data.statusText, 2000);
             console.error(data);
+            removeSpinner(container);
         }
     });
 }

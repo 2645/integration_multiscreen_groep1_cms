@@ -1,6 +1,8 @@
 /*jshint jquery: true, browser: true*/
 /* globals Materialize */
 
+var spinner = "<div class='preloader-wrapper big active spinner-container'><div class='spinner-layer spinner-blue-only'><div class='circle-clipper left'><div class='circle'></div></div><div class='gap-patch'><div class='circle'></div></div><div class='circle-clipper right'>        <div class='circle'></div></div></div></div>";
+
 $(document).ready( function() {
     window.APIurl = "http://10.3.50.220:8080";
     
@@ -40,7 +42,7 @@ $(document).ready( function() {
     $(document).on("click", ".attraction-card .btn-delete", submitAttractionDestroy);
     $(document).on("click", ".user-card .btn-delete", submitUserDestroy);
     $(document).on("click", ".avatar-card .btn-delete", submitAvatarDestroy);
-    $(document).on("click", ".barcode-card .btn-delete", submitBarcodeDestroy);
+    $(document).on("click", ".qr-card .btn-delete", submitBarcodeDestroy);
     
     $(document).on("click", "#btn-new-game", submitGameNew);
     $(document).on("click", "#btn-new-attraction", submitAttractionNew);
@@ -168,4 +170,12 @@ function convertImageToBase64(file, callback) {
 
 function makeBase64String(base64) {
     return "data:image/png;base64," + base64;
+}
+
+function addSpinner(container) {
+    $(container + " > .row").append(spinner);
+}
+
+function removeSpinner(container) {
+    $(container + " > .row .spinner-container").remove();
 }

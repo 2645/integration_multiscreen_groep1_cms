@@ -6,6 +6,7 @@ function fetchGames() {
     
     Materialize.toast('Lijst met spellen verversen...', 2000);
     $("main > .container > .row").empty();
+    addSpinner(container);
     
     $.ajax({
         url: window.APIurl + "/games/list",
@@ -28,10 +29,12 @@ function fetchGames() {
                 str += "<a class='waves-effect waves-light btn btn-submit card-title'><i class='material-icons left'>save</i>Opslaan</a>" + "</div></div></div></div>";
                 $(container + " > .row").append(str);
             }
+            removeSpinner(container);
         },
         error: function (data) {
             Materialize.toast("Fout bij het ophalen van de spellen: " + data.status + " " + data.statusText, 2000);
             console.error(data);
+            removeSpinner(container);
         }
     });
 }

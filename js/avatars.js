@@ -25,6 +25,7 @@ function fetchAvatars() {
     
     Materialize.toast('Lijst met avatars verversen...', 2000);
     $(container + " > .row").empty();
+    addSpinner(container);
     
     $.ajax({
         url: window.APIurl + "/avatars/list",
@@ -50,10 +51,12 @@ function fetchAvatars() {
 
                 $(container + " > .row").append(str);
             }
+            removeSpinner(container);
         },
         error: function (data) {
             Materialize.toast("Fout bij het ophalen van de avatars: " + data.status + " " + data.statusText, 2000);
             console.error(data);
+            removeSpinner(container);
         }
     });
 }

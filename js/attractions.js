@@ -6,6 +6,7 @@ function fetchAttractions() {
     
     Materialize.toast('Lijst met attracties verversen...', 2000);
     $(container + " > .row").empty();
+    addSpinner(container);
     
     $.ajax({
         url: window.APIurl + "/attractions/list",
@@ -54,10 +55,12 @@ function fetchAttractions() {
                 $(loc_path).attr("lat", loc_lat);
                 $(attraction_path + " span.card-title .material-icons").on("click", {loc_path: loc_path}, autosize);
             }
+            removeSpinner(container);
         },
         error: function (data) {
             Materialize.toast("Fout bij het ophalen van de attractie: " + data.status + " " + data.statusText, 2000);
             console.error(data);
+            removeSpinner(container);
         }
     });
 }

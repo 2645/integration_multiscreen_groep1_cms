@@ -94,30 +94,43 @@ textarea.materialize-textarea {
   display: none; }
 
 /* line 116, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
-.game-card .card-image, .user-card .card-image, .avatar-card .card-image {
+.game-card .card-image, .user-card .card-image, .avatar-card .card-image, .qr-card .card-image {
   height: 60% !important; }
   /* line 119, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
-  .game-card .card-image img, .user-card .card-image img, .avatar-card .card-image img {
+  .game-card .card-image img, .game-card .card-image canvas, .user-card .card-image img, .user-card .card-image canvas, .avatar-card .card-image img, .avatar-card .card-image canvas, .qr-card .card-image img, .qr-card .card-image canvas {
     top: 10% !important;
     width: 40% !important;
     left: 30% !important;
-    max-height: 100% !important; }
+    max-height: 100% !important;
+    position: relative; }
 
-/* line 129, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+/* line 130, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
 attraction-card .card-image {
   height: 60% !important; }
-  /* line 132, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+  /* line 133, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
   attraction-card .card-image img {
     height: 100%; }
 
-/* line 138, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+/* line 139, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
 .margin-auto {
   clear: both;
   margin-left: auto !important;
   margin-right: auto !important; }
 
+/* line 145, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+.input-qr-reward {
+  height: 45px;
+  line-height: 45px; }
+
+/* line 150, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1000; }
+
 @media only screen and (max-width: 992px) {
-  /* line 145, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
+  /* line 158, C:/Users/Dieter/Documents/GitHub/integration_multiscreen_groep1_cms/sass/styles.scss */
   main, footer, #topnav {
     padding-left: 0; } }
 
