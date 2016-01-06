@@ -6,6 +6,7 @@ var spinner = "<div class='preloader-wrapper big active spinner-container'><div 
 $(document).ready( function() {
     window.APIurl = "http://10.3.50.220:8080";
     
+    $(".button-collapse").sideNav();
     showContainer("dashboard");
     
     $("#nav-dashboard").on("click", function() {
@@ -82,9 +83,9 @@ function showContainer(name) {
     var text = "",
         containsData = $("#container-" + name + " > .row > div").length >= 1;
     
+    $(".button-collapse").sideNav('hide');
     $("main > .container").hide();
     $("#container-" + name).show();
-    $(".button-collapse").sideNav('hide');
     
     switch(name) {
         case "attractions":
