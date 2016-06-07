@@ -73,37 +73,33 @@ function submitUserChange(e) {
         lastname = $(user_path + " .input-lastname").val(),
         mail = $(user_path + " .input-mail").val(),
         balance = $(user_path + " .input-balance").val(),
-        file = $(user_path + " .input-file").prop("files"),
+        avatarID = $(user_path + " .input-avatar-id").val(),
         data = {
+            fname: firstname,
+            lname: lastname,
+            mail: mail,
             id: user_id,
             balance: balance,
-            avatarId: name, 
+            avatarId: avatarID,
         };
     
-    convertImageToBase64(file, submit);
-    
-    function submit(img) {
-        if(img) {
-            data.img = img;
+    Materialize.toast('Data naar de server versturen...', 2000);
+    console.log(data);
+    $.ajax({
+        type: "POST",
+        url: window.APIurl + "/users/update",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(data),
+        success: function () {
+            Materialize.toast('Data succesvol bijgewerkt.', 2000);
+            fetchUsers();
+        },
+        error: function (data) {
+            Materialize.toast("Fout bij het updaten van de gebruiker: " + data.status + " " + data.statusText, 2000);
+            console.error(data);
         }
-        
-        Materialize.toast('Data naar de server versturen...', 2000);
-        $.ajax({
-            type: "POST",
-            url: window.APIurl + "/users/update",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            data: JSON.stringify(data),
-            success: function () {
-                Materialize.toast('Data succesvol bijgewerkt.', 2000);
-                fetchUsers();
-            },
-            error: function (data) {
-                Materialize.toast("Fout bij het updaten van de gebruiker: " + data.status + " " + data.statusText, 2000);
-                console.error(data);
-            }
-        });
-    }
+    });
 }
 
 function submitUserNew() {
